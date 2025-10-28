@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electromagnetic Fields: Comprehensive Summary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #00d4ff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.1em;
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        nav h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .nav-link {
+            color: #a0a0a0;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            display: block;
+        }
+        
+        .nav-link:hover {
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            transform: translateX(5px);
+        }
+        
+        section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        h2 {
+            color: #00d4ff;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+            scroll-margin-top: 100px;
+        }
+        
+        h3 {
+            color: #4db8ff;
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        h4 {
+            color: #80d4ff;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .formula-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(16, 33, 62, 0.3) 100%);
+            border-left: 4px solid #00d4ff;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1.1em;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        .important {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(16, 33, 62, 0.3) 100%);
+            border-left: 4px solid #ff6b6b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        .note {
+            background: linear-gradient(135deg, rgba(255, 195, 0, 0.1) 0%, rgba(16, 33, 62, 0.3) 100%);
+            border-left: 4px solid #ffc300;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        th {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .vector {
+            font-weight: bold;
+            color: #00d4ff;
+        }
+        
+        sup {
+            font-size: 0.8em;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #00d4ff;
+            color: #1a1a2e;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+            transition: all 0.3s;
+            font-size: 1.5em;
+            font-weight: bold;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ Electromagnetic Fields</h1>
+            <p class="subtitle">Comprehensive Course Summary with Essential Formulas</p>
+        </header>
+
+        <nav>
+            <h3>Quick Navigation</h3>
+            <div class="nav-grid">
+                <a href="#vector-calc" class="nav-link">Vector Calculus</a>
+                <a href="#electrostatics" class="nav-link">Electrostatics</a>
+                <a href="#conductors" class="nav-link">Conductors & Dielectrics</a>
+                <a href="#boundary" class="nav-link">Boundary Conditions</a>
+                <a href="#magnetostatics" class="nav-link">Magnetostatics</a>
+                <a href="#magnetic-materials" class="nav-link">Magnetic Materials</a>
+                <a href="#faraday" class="nav-link">Faraday's Law</a>
+                <a href="#maxwell" class="nav-link">Maxwell's Equations</a>
+                <a href="#waves" class="nav-link">Electromagnetic Waves</a>
+                <a href="#poynting" class="nav-link">Poynting Vector</a>
+            </div>
+        </nav>
+
+        <section id="vector-calc">
+            <h2>1. Vector Calculus Fundamentals</h2>
+            
+            <h3>1.1 Coordinate Systems</h3>
+            
+            <h4>Cartesian Coordinates (x, y, z)</h4>
+            <div class="formula-box">
+                Position: <span class="vector">r</span> = xâₓ + yâᵧ + zâ_z<br>
+                Volume element: dV = dx dy dz<br>
+                Surface element: d<span class="vector">S</span> = dy dz âₓ or dx dz âᵧ or dx dy â_z
+            </div>
+            
+            <h4>Cylindrical Coordinates (ρ, φ, z)</h4>
+            <div class="formula-box">
+                Position: <span class="vector">r</span> = ρâᵨ + zâ_z<br>
+                Conversions: x = ρcos(φ), y = ρsin(φ), z = z<br>
+                Volume element: dV = ρ dρ dφ dz<br>
+                Surface element: d<span class="vector">S</span> = ρ dφ dz âᵨ
+            </div>
+            
+            <h4>Spherical Coordinates (r, θ, φ)</h4>
+            <div class="formula-box">
+                Position: <span class="vector">r</span> = râᵣ<br>
+                Conversions: x = r sin(θ)cos(φ), y = r sin(θ)sin(φ), z = r cos(θ)<br>
+                Volume element: dV = r² sin(θ) dr dθ dφ<br>
+                Surface element: d<span class="vector">S</span> = r² sin(θ) dθ dφ âᵣ
+            </div>
+
+            <h3>1.2 Vector Operations</h3>
+            
+            <h4>Gradient (∇)</h4>
+            <div class="formula-box">
+                ∇f = ∂f/∂x âₓ + ∂f/∂y âᵧ + ∂f/∂z â_z
+            </div>
+            <p>The gradient points in the direction of maximum increase of scalar field f.</p>
+            
+            <h4>Divergence (∇·)</h4>
+            <div class="formula-box">
+                ∇·<span class="vector">A</span> = ∂Aₓ/∂x + ∂Aᵧ/∂y + ∂A_z/∂z
+            </div>
+            <p>Measures the "source strength" or "outflow" of a vector field at a point.</p>
+            
+            <h4>Curl (∇×)</h4>
+            <div class="formula-box">
+                ∇×<span class="vector">A</span> = (∂A_z/∂y - ∂Aᵧ/∂z)âₓ + (∂Aₓ/∂z - ∂A_z/∂x)âᵧ + (∂Aᵧ/∂x - ∂Aₓ/∂y)â_z
+            </div>
+            <p>Measures the circulation or rotation of a vector field.</p>
+            
+            <h4>Laplacian (∇²)</h4>
+            <div class="formula-box">
+                ∇²f = ∂²f/∂x² + ∂²f/∂y² + ∂²f/∂z²
+            </div>
+
+            <h3>1.3 Integral Theorems</h3>
+            
+            <h4>Divergence Theorem (Gauss's Theorem)</h4>
+            <div class="formula-box">
+                ∫∫∫<sub>V</sub> (∇·<span class="vector">A</span>) dV = ∮∮<sub>S</sub> <span class="vector">A</span>·d<span class="vector">S</span>
+            </div>
+            <p>Relates volume integral of divergence to surface integral.</p>
+            
+            <h4>Stokes' Theorem</h4>
+            <div class="formula-box">
+                ∫∫<sub>S</sub> (∇×<span class="vector">A</span>)·d<span class="vector">S</span> = ∮<sub>C</sub> <span class="vector">A</span>·d<span class="vector">l</span>
+            </div>
+            <p>Relates surface integral of curl to line integral.</p>
+            
+            <h4>Gradient Theorem</h4>
+            <div class="formula-box">
+                ∫<sub>a</sub><sup>b</sup> (∇f)·d<span class="vector">l</span> = f(b) - f(a)
+            </div>
+
+            <div class="important">
+                <strong>Important Identities:</strong><br>
+                ∇×(∇f) = 0 (curl of gradient is zero)<br>
+                ∇·(∇×<span class="vector">A</span>) = 0 (divergence of curl is zero)<br>
+                ∇×(∇×<span class="vector">A</span>) = ∇(∇·<span class="vector">A</span>) - ∇²<span class="vector">A</span>
+            </div>
+        </section>
+
+        <section id="electrostatics">
+            <h2>2. Electrostatics</h2>
+            
+            <h3>2.1 Coulomb's Law</h3>
+            <div class="formula-box">
+                <span class="vector">F</span> = (1/4πε₀) · (q₁q₂/r²) âᵣ
+            </div>
+            <p>Where ε₀ = 8.854 × 10⁻¹² F/m (permittivity of free space)</p>
+            
+            <h3>2.2 Electric Field</h3>
+            <div class="formula-box">
+                <span class="vector">E</span> = <span class="vector">F</span>/q = (1/4πε₀) · (Q/r²) âᵣ
+            </div>
+            
+            <h4>For Point Charge</h4>
+            <div class="formula-box">
+                <span class="vector">E</span> = (1/4πε₀) · (q/r²) âᵣ
+            </div>
+            
+            <h4>For Continuous Charge Distribution</h4>
+            <div class="formula-box">
+                <span class="vector">E</span> = (1/4πε₀) ∫ (ρ(<span class="vector">r'</span>)/|<span class="vector">r</span>-<span class="vector">r'</span>|²) âᵣ dV'<br><br>
+                Linear: d<span class="vector">E</span> = (λ dl')/(4πε₀r²) âᵣ<br>
+                Surface: d<span class="vector">E</span> = (σ dS')/(4πε₀r²) âᵣ<br>
+                Volume: d<span class="vector">E</span> = (ρ dV')/(4πε₀r²) âᵣ
+            </div>
+
+            <h3>2.3 Gauss's Law (Integral Form)</h3>
+            <div class="formula-box">
+                ∮∮<sub>S</sub> <span class="vector">E</span>·d<span class="vector">S</span> = Q<sub>enc</sub>/ε₀
+            </div>
+            
+            <h4>Differential Form</h4>
+            <div class="formula-box">
+                ∇·<span class="vector">E</span> = ρ/ε₀
+            </div>
+            <p>This is one of Maxwell's equations in electrostatics.</p>
+
+            <h3>2.4 Electric Potential</h3>
+            <div class="formula-box">
+                V(<span class="vector">r</span>) = -∫ <span class="vector">E</span>·d<span class="vector">l</span><br><br>
+                <span class="vector">E</span> = -∇V
+            </div>
+            
+            <h4>For Point Charge</h4>
+            <div class="formula-box">
+                V = (1/4πε₀) · (q/r)
+            </div>
+            
+            <h4>For Continuous Distribution</h4>
+            <div class="formula-box">
+                V = (1/4πε₀) ∫ ρ/r dV' = (1/4πε₀) ∫ λ/r dl' = (1/4πε₀) ∫ σ/r dS'
+            </div>
+
+            <h3>2.5 Poisson's and Laplace's Equations</h3>
+            <div class="formula-box">
+                ∇²V = -ρ/ε₀  (Poisson's equation)<br><br>
+                ∇²V = 0  (Laplace's equation, when ρ = 0)
+            </div>
+
+            <h3>2.6 Electric Energy</h3>
+            <div class="formula-box">
+                W = (1/2)∫ ρV dV = (ε₀/2)∫ E² dV
+            </div>
+            
+            <h4>Energy Density</h4>
+            <div class="formula-box">
+                u<sub>E</sub> = (ε₀/2)E² = (1/2)<span class="vector">E</span>·<span class="vector">D</span>
+            </div>
+
+            <h3>2.7 Important Field Configurations</h3>
+            
+            <table>
+                <tr>
+                    <th>Configuration</th>
+                    <th>Electric Field</th>
+                    <th>Potential</th>
+                </tr>
+                <tr>
+                    <td>Point charge q</td>
+                    <td>E = q/(4πε₀r²)</td>
+                    <td>V = q/(4πε₀r)</td>
+                </tr>
+                <tr>
+                    <td>Infinite line charge (λ)</td>
+                    <td>E = λ/(2πε₀ρ)</td>
+                    <td>V = -(λ/2πε₀)ln(ρ)</td>
+                </tr>
+                <tr>
+                    <td>Infinite plane (σ)</td>
+                    <td>E = σ/(2ε₀)</td>
+                    <td>V = -σz/(2ε₀)</td>
+                </tr>
+                <tr>
+                    <td>Spherical shell (r > R)</td>
+                    <td>E = Q/(4πε₀r²)</td>
+                    <td>V = Q/(4πε₀r)</td>
+                </tr>
+                <tr>
+                    <td>Spherical shell (r < R)</td>
+                    <td>E = 0</td>
+                    <td>V = Q/(4πε₀R)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="conductors">
+            <h2>3. Conductors and Dielectrics</h2>
+            
+            <h3>3.1 Properties of Conductors</h3>
+            <div class="important">
+                <strong>Inside a conductor in equilibrium:</strong>
+                <ul>
+                    <li><span class="vector">E</span> = 0</li>
+                    <li>ρ = 0 (no volume charge)</li>
+                    <li>V = constant</li>
+                    <li>All charge resides on surface</li>
+                    <li><span class="vector">E</span> just outside is perpendicular to surface</li>
+                </ul>
+            </div>
+            
+            <h4>Surface Charge Density and Field</h4>
+            <div class="formula-box">
+                E<sub>perpendicular</sub> = σ/ε₀<br><br>
+                <span class="vector">E</span> = (σ/ε₀)n̂
+            </div>
+
+            <h3>3.2 Capacitance</h3>
+            <div class="formula-box">
+                C = Q/V
+            </div>
+            
+            <h4>Common Capacitor Configurations</h4>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Capacitance</th>
+                </tr>
+                <tr>
+                    <td>Parallel plate</td>
+                    <td>C = ε₀A/d</td>
+                </tr>
+                <tr>
+                    <td>Cylindrical</td>
+                    <td>C = 2πε₀L/ln(b/a)</td>
+                </tr>
+                <tr>
+                    <td>Spherical</td>
+                    <td>C = 4πε₀ab/(b-a)</td>
+                </tr>
+                <tr>
+                    <td>Isolated sphere</td>
+                    <td>C = 4πε₀R</td>
+                </tr>
+            </table>
+            
+            <h4>Energy Stored in Capacitor</h4>
+            <div class="formula-box">
+                W = (1/2)CV² = (1/2)QV = Q²/(2C)
+            </div>
+
+            <h3>3.3 Dielectrics</h3>
+            
+            <h4>Polarization</h4>
+            <div class="formula-box">
+                <span class="vector">P</span> = dipole moment per unit volume<br><br>
+                σ<sub>b</sub> = <span class="vector">P</span>·n̂ (bound surface charge)<br><br>
+                ρ<sub>b</sub> = -∇·<span class="vector">P</span> (bound volume charge)
+            </div>
+            
+            <h4>Electric Displacement Field</h4>
+            <div class="formula-box">
+                <span class="vector">D</span> = ε₀<span class="vector">E</span> + <span class="vector">P</span>
+            </div>
+            
+            <h4>Gauss's Law in Materials</h4>
+            <div class="formula-box">
+                ∮ <span class="vector">D</span>·d<span class="vector">S</span> = Q<sub>f,enc</sub><br><br>
+                ∇·<span class="vector">D</span> = ρ<sub>f</sub>
+            </div>
+            
+            <h4>Linear Dielectrics</h4>
+            <div class="formula-box">
+                <span class="vector">P</span> = ε₀χ<sub>e</sub><span class="vector">E</span> (electric susceptibility)<br><br>
+                <span class="vector">D</span> = ε<span class="vector">E</span> where ε = ε₀(1 + χ<sub>e</sub>) = ε₀ε<sub>r</sub><br><br>
+                ε<sub>r</sub> = relative permittivity (dielectric constant)
+            </div>
+            
+            <h4>Capacitance with Dielectric</h4>
+            <div class="formula-box">
+                C = ε<sub>r</sub>C₀ = εA/d
+            </div>
+        </section>
+
+        <section id="boundary">
+            <h2>4. Boundary Conditions</h2>
+            
+            <h3>4.1 Electrostatic Boundary Conditions</h3>
+            <div class="formula-box">
+                E<sub>⊥,above</sub> - E<sub>⊥,below</sub> = σ<sub>f</sub>/ε₀<br><br>
+                D<sub>⊥,above</sub> - D<sub>⊥,below</sub> = σ<sub>f</sub><br><br>
+                E<sub>∥,above</sub> = E<sub>∥,below</sub><br><br>
+                V<sub>above</sub> = V<sub>below</sub>
+            </div>
+            
+            <div class="note">
+                <strong>Note:</strong> The perpendicular component of <span class="vector">E</span> is discontinuous at a surface with free charge, while the parallel component is continuous. The potential V is always continuous.
+            </div>
+        </section>
+
+        <section id="magnetostatics">
+            <h2>5. Magnetostatics</h2>
+            
+            <h3>5.1 Lorentz Force Law</h3>
+            <div class="formula-box">
+                <span class="vector">F</span> = q(<span class="vector">E</span> + <span class="vector">v</span>×<span class="vector">B</span>)
+            </div>
+            
+            <h4>Force on Current Element</h4>
+            <div class="formula-box">
+                d<span class="vector">F</span> = I d<span class="vector">l</span>×<span class="vector">B</span><br><br>
+                <span class="vector">F</span> = ∫ I d<span class="vector">l</span>×<span class="vector">B</span>
+            </div>
+
+            <h3>5.2 Biot-Savart Law</h3>
+            <div class="formula-box">
+                d<span class="vector">B</span> = (μ₀/4π) · (I d<span class="vector">l</span>×r̂)/r²<br><br>
+                <span class="vector">B</span> = (μ₀/4π) ∫ (I d<span class="vector">l</span>×r̂)/r²
+            </div>
+            <p>Where μ₀ = 4π × 10⁻⁷ T·m/A (permeability of free space)</p>
+            
+            <h4>For Current Distributions</h4>
+            <div class="formula-box">
+                <span class="vector">B</span> = (μ₀/4π) ∫ (<span class="vector">J</span>×r̂)/r² dV'<br><br>
+                Surface: <span class="vector">B</span> = (μ₀/4π) ∫ (<span class="vector">K</span>×r̂)/r² dS'
+            </div>
+
+            <h3>5.3 Ampère's Law (Integral Form)</h3>
+            <div class="formula-box">
+                ∮ <span class="vector">B</span>·d<span class="vector">l</span> = μ₀I<sub>enc</sub>
+            </div>
+            
+            <h4>Differential Form</h4>
+            <div class="formula-box">
+                ∇×<span class="vector">B</span> = μ₀<span class="vector">J</span>
+            </div>
+
+            <h3>5.4 Magnetic Field Configurations</h3>
+            
+            <table>
+                <tr>
+                    <th>Configuration</th>
+                    <th>Magnetic Field</th>
+                </tr>
+                <tr>
+                    <td>Infinite straight wire</td>
+                    <td>B = μ₀I/(2πρ)</td>
+                </tr>
+                <tr>
+                    <td>Center of circular loop</td>
+                    <td>B = μ₀I/(2R)</td>
+                </tr>
+                <tr>
+                    <td>Solenoid (interior)</td>
+                    <td>B = μ₀nI (n = turns/length)</td>
+                </tr>
+                <tr>
+                    <td>Toroid</td>
+                    <td>B = μ₀NI/(2πr)</td>
+                </tr>
+                <tr>
+                    <td>Infinite surface current K</td>
+                    <td>B = (μ₀/2)K</td>
+                </tr>
+            </table>
+
+            <h3>5.5 Magnetic Vector Potential</h3>
+            <div class="formula-box">
+                <span class="vector">B</span> = ∇×<span class="vector">A</span><br><br>
+                ∇·<span class="vector">B</span> = 0 (no magnetic monopoles)
+            </div>
+            
+            <h4>Vector Potential for Current Distributions</h4>
+            <div class="formula-box">
+                <span class="vector">A</span> = (μ₀/4π) ∫ <span class="vector">J</span>/r dV'<br><br>
+                For line current: <span class="vector">A</span> = (μ₀I/4π) ∫ d<span class="vector">l</span>'/r
+            </div>
+
+            <h3>5.6 Magnetic Dipole Moment</h3>
+            <div class="formula-box">
+                <span class="vector">m</span> = I<span class="vector">A</span> (current loop)<br><br>
+                <span class="vector">τ</span> = <span class="vector">m</span>×<span class="vector">B</span> (torque)<br><br>
+                U = -<span class="vector">m</span>·<span class="vector">B</span> (potential energy)
+            </div>
+            
+            <h4>Magnetic Dipole Field</h4>
+            <div class="formula-box">
+                <span class="vector">B</span> = (μ₀/4π) · [3(<span class="vector">m</span>·r̂)r̂ - <span class="vector">m</span>]/r³
+            </div>
+        </section>
+
+        <section id="magnetic-materials">
+            <h2>6. Magnetic Materials</h2>
+            
+            <h3>6.1 Magnetization</h3>
+            <div class="formula-box">
+                <span class="vector">M</span> = magnetic dipole moment per unit volume<br><br>
+                <span class="vector">J</span><sub>b</sub> = ∇×<span class="vector">M</span> (bound volume current)<br><br>
+                <span class="vector">K</span><sub>b</sub> = <span class="vector">M</span>×n̂ (bound surface current)
+            </div>
+
+            <h3>6.2 Auxiliary Field H</h3>
+            <div class="formula-box">
+                <span class="vector">H</span> = (<span class="vector">B</span>/μ₀) - <span class="vector">M</span>
+            </div>
+            
+            <h4>Ampère's Law with Magnetization</h4>
+            <div class="formula-box">
+                ∮ <span class="vector">H</span>·d<span class="vector">l</span> = I<sub>f,enc</sub><br><br>
+                ∇×<span class="vector">H</span> = <span class="vector">J</span><sub>f</sub>
+            </div>
+
+            <h3>6.3 Linear Magnetic Materials</h3>
+            <div class="formula-box">
+                <span class="vector">M</span> = χ<sub>m</sub><span class="vector">H</span> (magnetic susceptibility)<br><br>
+                <span class="vector">B</span> = μ<span class="vector">H</span> where μ = μ₀(1 + χ<sub>m</sub>) = μ₀μ<sub>r</sub><br><br>
+                μ<sub>r</sub> = relative permeability
+            </div>
+            
+            <div class="note">
+                <strong>Material Types:</strong><br>
+                • Diamagnetic: χ<sub>m</sub> < 0, μ<sub>r</sub> < 1 (weakly repelled)<br>
+                • Paramagnetic: χ<sub>m</sub> > 0, μ<sub>r</sub> > 1 (weakly attracted)<br>
+                • Ferromagnetic: χ<sub>m</sub> >> 0, μ<sub>r</sub> >> 1 (strongly attracted)
+            </div>
+
+            <h3>6.4 Magnetostatic Boundary Conditions</h3>
+            <div class="formula-box">
+                B<sub>⊥,above</sub> = B<sub>⊥,below</sub><br><br>
+                H<sub>∥,above</sub> - H<sub>∥,below</sub> = K<sub>f</sub><br><br>
+                B<sub>∥,above</sub>/μ<sub>above</sub> - B<sub>∥,below</sub>/μ<sub>below</sub> = K<sub>f</sub>
+            </div>
+
+            <h3>6.5 Magnetic Energy</h3>
+            <div class="formula-box">
+                W = (1/2μ₀) ∫ B² dV = (1/2) ∫ <span class="vector">B</span>·<span class="vector">H</span> dV
+            </div>
+            
+            <h4>Energy Density</h4>
+            <div class="formula-box">
+                u<sub>B</sub> = B²/(2μ₀) = (1/2)<span class="vector">B</span>·<span class="vector">H</span>
+            </div>
+        </section>
+
+        <section id="faraday">
+            <h2>7. Electromagnetic Induction</h2>
+            
+            <h3>7.1 Faraday's Law (Integral Form)</h3>
+            <div class="formula-box">
+                ℰ = -dΦ<sub>B</sub>/dt<br><br>
+                Φ<sub>B</sub> = ∫ <span class="vector">B</span>·d<span class="vector">S</span> (magnetic flux)
+            </div>
+            
+            <h4>Differential Form</h4>
+            <div class="formula-box">
+                ∇×<span class="vector">E</span> = -∂<span class="vector">B</span>/∂t
+            </div>
+            <p>This shows that time-varying magnetic fields produce electric fields.</p>
+
+            <h3>7.2 Motional EMF</h3>
+            <div class="formula-box">
+                ℰ = ∮ (<span class="vector">v</span>×<span class="vector">B</span>)·d<span class="vector">l</span>
+            </div>
+
+            <h3>7.3 Inductance</h3>
+            
+            <h4>Self-Inductance</h4>
+            <div class="formula-box">
+                Φ<sub>B</sub> = LI<br><br>
+                ℰ = -L(dI/dt)<br><br>
+                L = Φ<sub>B</sub>/I
+            </div>
+            
+            <h4>Mutual Inductance</h4>
+            <div class="formula-box">
+                M₁₂ = M₂₁ = M = Φ₁₂/I₂ = Φ₂₁/I₁<br><br>
+                ℰ₁ = -M(dI₂/dt)
+            </div>
+            
+            <h4>Common Inductance Formulas</h4>
+            <table>
+                <tr>
+                    <th>Configuration</th>
+                    <th>Inductance</th>
+                </tr>
+                <tr>
+                    <td>Solenoid</td>
+                    <td>L = μ₀n²V = μ₀n²Al</td>
+                </tr>
+                <tr>
+                    <td>Toroid</td>
+                    <td>L = μ₀N²h/(2π)ln(b/a)</td>
+                </tr>
+                <tr>
+                    <td>Coaxial cable</td>
+                    <td>L = (μ₀l/2π)ln(b/a)</td>
+                </tr>
+            </table>
+
+            <h3>7.4 Magnetic Energy in Inductors</h3>
+            <div class="formula-box">
+                W = (1/2)LI²
+            </div>
+
+            <h3>7.5 Displacement Current</h3>
+            <div class="formula-box">
+                <span class="vector">J</span><sub>d</sub> = ε₀(∂<span class="vector">E</span>/∂t) = ∂<span class="vector">D</span>/∂t
+            </div>
+            
+            <h4>Ampère-Maxwell Law</h4>
+            <div class="formula-box">
+                ∮ <span class="vector">B</span>·d<span class="vector">l</span> = μ₀(I<sub>enc</sub> + ε₀dΦ<sub>E</sub>/dt)<br><br>
+                ∇×<span class="vector">B</span> = μ₀<span class="vector">J</span> + μ₀ε₀(∂<span class="vector">E</span>/∂t)
+            </div>
+        </section>
+
+        <section id="maxwell">
+            <h2>8. Maxwell's Equations</h2>
+            
+            <h3>8.1 Maxwell's Equations in Vacuum</h3>
+            
+            <div class="grid-2">
+                <div>
+                    <h4>Integral Form</h4>
+                    <div class="formula-box">
+                        1. ∮ <span class="vector">E</span>·d<span class="vector">S</span> = Q/ε₀<br><br>
+                        2. ∮ <span class="vector">B</span>·d<span class="vector">S</span> = 0<br><br>
+                        3. ∮ <span class="vector">E</span>·d<span class="vector">l</span> = -dΦ<sub>B</sub>/dt<br><br>
+                        4. ∮ <span class="vector">B</span>·d<span class="vector">l</span> = μ₀I + μ₀ε₀dΦ<sub>E</sub>/dt
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>Differential Form</h4>
+                    <div class="formula-box">
+                        1. ∇·<span class="vector">E</span> = ρ/ε₀<br><br>
+                        2. ∇·<span class="vector">B</span> = 0<br><br>
+                        3. ∇×<span class="vector">E</span> = -∂<span class="vector">B</span>/∂t<br><br>
+                        4. ∇×<span class="vector">B</span> = μ₀<span class="vector">J</span> + μ₀ε₀∂<span class="vector">E</span>/∂t
+                    </div>
+                </div>
+            </div>
+
+            <h3>8.2 Maxwell's Equations in Matter</h3>
+            
+            <div class="formula-box">
+                1. ∇·<span class="vector">D</span> = ρ<sub>f</sub><br><br>
+                2. ∇·<span class="vector">B</span> = 0<br><br>
+                3. ∇×<span class="vector">E</span> = -∂<span class="vector">B</span>/∂t<br><br>
+                4. ∇×<span class="vector">H</span> = <span class="vector">J</span><sub>f</sub> + ∂<span class="vector">D</span>/∂t
+            </div>
+
+            <h3>8.3 Continuity Equation</h3>
+            <div class="formula-box">
+                ∇·<span class="vector">J</span> + ∂ρ/∂t = 0<br><br>
+                ∮ <span class="vector">J</span>·d<span class="vector">S</span> = -dQ/dt
+            </div>
+
+            <h3>8.4 Boundary Conditions (General)</h3>
+            
+            <div class="important">
+                <strong>Electric Fields:</strong><br>
+                • E<sub>⊥,2</sub> - E<sub>⊥,1</sub> = σ<sub>f</sub>/ε₀<br>
+                • D<sub>⊥,2</sub> - D<sub>⊥,1</sub> = σ<sub>f</sub><br>
+                • E<sub>∥,2</sub> = E<sub>∥,1</sub><br><br>
+                
+                <strong>Magnetic Fields:</strong><br>
+                • B<sub>⊥,2</sub> = B<sub>⊥,1</sub><br>
+                • H<sub>∥,2</sub> - H<sub>∥,1</sub> = K<sub>f</sub><br>
+                • (1/μ₂)B<sub>∥,2</sub> - (1/μ₁)B<sub>∥,1</sub> = K<sub>f</sub>
+            </div>
+        </section>
+
+        <section id="waves">
+            <h2>9. Electromagnetic Waves</h2>
+            
+            <h3>9.1 Wave Equation</h3>
+            <div class="formula-box">
+                ∇²<span class="vector">E</span> = μ₀ε₀(∂²<span class="vector">E</span>/∂t²)<br><br>
+                ∇²<span class="vector">B</span> = μ₀ε₀(∂²<span class="vector">B</span>/∂t²)
+            </div>
+            
+            <h4>In General Form</h4>
+            <div class="formula-box">
+                ∇²<span class="vector">E</span> = με(∂²<span class="vector">E</span>/∂t²) + μσ(∂<span class="vector">E</span>/∂t)
+            </div>
+
+            <h3>9.2 Plane Wave Solutions</h3>
+            <div class="formula-box">
+                <span class="vector">E</span> = <span class="vector">E</span>₀ cos(<span class="vector">k</span>·<span class="vector">r</span> - ωt + φ)<br><br>
+                <span class="vector">B</span> = <span class="vector">B</span>₀ cos(<span class="vector">k</span>·<span class="vector">r</span> - ωt + φ)
+            </div>
+            
+            <h4>Complex Notation</h4>
+            <div class="formula-box">
+                <span class="vector">Ẽ</span> = <span class="vector">Ẽ</span>₀ e<sup>i(<span class="vector">k</span>·<span class="vector">r</span> - ωt)</sup><br><br>
+                <span class="vector">B̃</span> = <span class="vector">B̃</span>₀ e<sup>i(<span class="vector">k</span>·<span class="vector">r</span> - ωt)</sup>
+            </div>
+
+            <h3>9.3 Wave Properties</h3>
+            <div class="formula-box">
+                v = ω/k = 1/√(με) (phase velocity)<br><br>
+                c = 1/√(μ₀ε₀) = 3 × 10⁸ m/s (speed of light in vacuum)<br><br>
+                v = c/n where n = √(μ<sub>r</sub>ε<sub>r</sub>) (refractive index)<br><br>
+                λ = 2π/k = vT = v/f (wavelength)
+            </div>
+
+            <h3>9.4 Wave Relations</h3>
+            <div class="formula-box">
+                <span class="vector">E</span> ⊥ <span class="vector">B</span> ⊥ <span class="vector">k</span> (transverse waves)<br><br>
+                B = E/v = √(με)E<br><br>
+                <span class="vector">B</span> = (<span class="vector">k</span>×<span class="vector">E</span>)/ω = (1/v)(k̂×<span class="vector">E</span>)
+            </div>
+
+            <h3>9.5 Polarization</h3>
+            
+            <h4>Linear Polarization</h4>
+            <div class="formula-box">
+                <span class="vector">E</span> = E₀ cos(kz - ωt) x̂
+            </div>
+            
+            <h4>Circular Polarization</h4>
+            <div class="formula-box">
+                <span class="vector">E</span> = E₀[cos(kz - ωt) x̂ ± sin(kz - ωt) ŷ]
+            </div>
+            
+            <h4>Elliptical Polarization</h4>
+            <div class="formula-box">
+                <span class="vector">E</span> = E<sub>x</sub> cos(kz - ωt) x̂ + E<sub>y</sub> cos(kz - ωt + δ) ŷ
+            </div>
+
+            <h3>9.6 Reflection and Transmission</h3>
+            
+            <h4>Normal Incidence</h4>
+            <div class="formula-box">
+                Reflection coefficient: R = [(n₁ - n₂)/(n₁ + n₂)]²<br><br>
+                Transmission coefficient: T = 4n₁n₂/(n₁ + n₂)²<br><br>
+                R + T = 1
+            </div>
+            
+            <h4>Fresnel Equations (oblique incidence)</h4>
+            <div class="formula-box">
+                r<sub>⊥</sub> = (n₁cosθ<sub>i</sub> - n₂cosθ<sub>t</sub>)/(n₁cosθ<sub>i</sub> + n₂cosθ<sub>t</sub>)<br><br>
+                r<sub>∥</sub> = (n₂cosθ<sub>i</sub> - n₁cosθ<sub>t</sub>)/(n₂cosθ<sub>i</sub> + n₁cosθ<sub>t</sub>)<br><br>
+                t<sub>⊥</sub> = 2n₁cosθ<sub>i</sub>/(n₁cosθ<sub>i</sub> + n₂cosθ<sub>t</sub>)<br><br>
+                t<sub>∥</sub> = 2n₁cosθ<sub>i</sub>/(n₂cosθ<sub>i</sub> + n₁cosθ<sub>t</sub>)
+            </div>
+            
+            <h4>Brewster's Angle</h4>
+            <div class="formula-box">
+                tan(θ<sub>B</sub>) = n₂/n₁<br><br>
+                At θ<sub>B</sub>: r<sub>∥</sub> = 0 (no reflection for parallel polarization)
+            </div>
+            
+            <h4>Total Internal Reflection</h4>
+            <div class="formula-box">
+                Critical angle: sin(θ<sub>c</sub>) = n₂/n₁ (when n₁ > n₂)<br><br>
+                For θ<sub>i</sub> > θ<sub>c</sub>: complete reflection
+            </div>
+        </section>
+
+        <section id="poynting">
+            <h2>10. Energy and Momentum in EM Waves</h2>
+            
+            <h3>10.1 Poynting Vector</h3>
+            <div class="formula-box">
+                <span class="vector">S</span> = (1/μ₀)<span class="vector">E</span>×<span class="vector">B</span> = <span class="vector">E</span>×<span class="vector">H</span>
+            </div>
+            <p>Represents electromagnetic energy flux (W/m²)</p>
+            
+            <h4>For Plane Waves</h4>
+            <div class="formula-box">
+                |<span class="vector">S</span>| = (1/μ₀v)E² = (ε/μ)½E² = cε₀E² (in vacuum)
+            </div>
+
+            <h3>10.2 Energy Density</h3>
+            <div class="formula-box">
+                u = u<sub>E</sub> + u<sub>B</sub> = (ε₀/2)E² + (1/2μ₀)B²<br><br>
+                For plane waves: u<sub>E</sub> = u<sub>B</sub>, so u = ε₀E² = B²/μ₀
+            </div>
+
+            <h3>10.3 Intensity</h3>
+            <div class="formula-box">
+                I = <|<span class="vector">S</span>|> = (1/2)cε₀E₀² = (1/2μ₀c)B₀² (time average)
+            </div>
+
+            <h3>10.4 Poynting's Theorem</h3>
+            <div class="formula-box">
+                -∂u/∂t = ∇·<span class="vector">S</span> + <span class="vector">J</span>·<span class="vector">E</span>
+            </div>
+            
+            <h4>Integral Form</h4>
+            <div class="formula-box">
+                -dW/dt = ∮ <span class="vector">S</span>·d<span class="vector">A</span> + ∫ <span class="vector">J</span>·<span class="vector">E</span> dV
+            </div>
+            <p>Energy conservation: rate of decrease of EM energy = energy flow out + ohmic losses</p>
+
+            <h3>10.5 Radiation Pressure</h3>
+            <div class="formula-box">
+                Momentum density: <span class="vector">g</span> = <span class="vector">S</span>/c² = ε₀<span class="vector">E</span>×<span class="vector">B</span><br><br>
+                Radiation pressure (complete absorption): P = I/c = S/c<br><br>
+                Radiation pressure (perfect reflection): P = 2I/c = 2S/c
+            </div>
+
+            <h3>10.6 Maxwell Stress Tensor</h3>
+            <div class="formula-box">
+                T<sub>ij</sub> = ε₀(E<sub>i</sub>E<sub>j</sub> - ½δ<sub>ij</sub>E²) + (1/μ₀)(B<sub>i</sub>B<sub>j</sub> - ½δ<sub>ij</sub>B²)
+            </div>
+            
+            <h4>Force per unit volume</h4>
+            <div class="formula-box">
+                <span class="vector">f</span> = ρ<span class="vector">E</span> + <span class="vector">J</span>×<span class="vector">B</span> = ∇·<span class="vector">T</span> - ε₀μ₀∂<span class="vector">S</span>/∂t
+            </div>
+        </section>
+
+        <section id="additional">
+            <h2>11. Additional Important Topics</h2>
+            
+            <h3>11.1 Electromagnetic Potentials</h3>
+            <div class="formula-box">
+                <span class="vector">E</span> = -∇V - ∂<span class="vector">A</span>/∂t<br><br>
+                <span class="vector">B</span> = ∇×<span class="vector">A</span>
+            </div>
+            
+            <h4>Gauge Transformations</h4>
+            <div class="formula-box">
+                <span class="vector">A</span>' = <span class="vector">A</span> + ∇λ<br><br>
+                V' = V - ∂λ/∂t
+            </div>
+            
+            <h4>Lorenz Gauge</h4>
+            <div class="formula-box">
+                ∇·<span class="vector">A</span> + με∂V/∂t = 0
+            </div>
+            
+            <h4>Coulomb Gauge</h4>
+            <div class="formula-box">
+                ∇·<span class="vector">A</span> = 0
+            </div>
+
+            <h3>11.2 Retarded Potentials</h3>
+            <div class="formula-box">
+                V(<span class="vector">r</span>,t) = (1/4πε₀) ∫ ρ(<span class="vector">r</span>',t<sub>ret</sub>)/|<span class="vector">r</span>-<span class="vector">r</span>'| dV'<br><br>
+                <span class="vector">A</span>(<span class="vector">r</span>,t) = (μ₀/4π) ∫ <span class="vector">J</span>(<span class="vector">r</span>',t<sub>ret</sub>)/|<span class="vector">r</span>-<span class="vector">r</span>'| dV'<br><br>
+                where t<sub>ret</sub> = t - |<span class="vector">r</span>-<span class="vector">r</span>'|/c
+            </div>
+
+            <h3>11.3 Dipole Radiation</h3>
+            
+            <h4>Electric Dipole</h4>
+            <div class="formula-box">
+                <span class="vector">E</span> = (μ₀/4πr)[n̂×(n̂×p̈)]<br><br>
+                <span class="vector">B</span> = (μ₀/4πrc)[n̂×p̈]<br><br>
+                Power radiated: P = (μ₀p̈²)/(6πc) = (μ₀ω⁴p₀²)/(12πc)
+            </div>
+            
+            <h4>Larmor Formula</h4>
+            <div class="formula-box">
+                P = (μ₀q²a²)/(6πc) = (q²a²)/(6πε₀c³)
+            </div>
+            <p>Power radiated by accelerating point charge</p>
+
+            <h3>11.4 Skin Depth</h3>
+            <div class="formula-box">
+                d = 1/√(πfμσ) = √(2/ωμσ)
+            </div>
+            <p>Depth at which field amplitude decreases to 1/e in a conductor</p>
+
+            <h3>11.5 Important Physical Constants</h3>
+            <table>
+                <tr>
+                    <th>Constant</th>
+                    <th>Symbol</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Permittivity of free space</td>
+                    <td>ε₀</td>
+                    <td>8.854 × 10⁻¹² F/m</td>
+                </tr>
+                <tr>
+                    <td>Permeability of free space</td>
+                    <td>μ₀</td>
+                    <td>4π × 10⁻⁷ H/m</td>
+                </tr>
+                <tr>
+                    <td>Speed of light</td>
+                    <td>c</td>
+                    <td>2.998 × 10⁸ m/s</td>
+                </tr>
+                <tr>
+                    <td>Elementary charge</td>
+                    <td>e</td>
+                    <td>1.602 × 10⁻¹⁹ C</td>
+                </tr>
+                <tr>
+                    <td>Impedance of free space</td>
+                    <td>Z₀</td>
+                    <td>377 Ω</td>
+                </tr>
+            </table>
+        </section>
+
+        <section style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(16, 33, 62, 0.5) 100%);">
+            <h2>Summary of Key Concepts</h2>
+            
+            <div class="important">
+                <h3>Fundamental Laws</h3>
+                <ul>
+                    <li><strong>Coulomb's Law:</strong> Foundation of electrostatics</li>
+                    <li><strong>Gauss's Law:</strong> Relates electric field to charge distribution</li>
+                    <li><strong>Ampère's Law:</strong> Relates magnetic field to current</li>
+                    <li><strong>Faraday's Law:</strong> Time-varying B produces E</li>
+                    <li><strong>Maxwell's Addition:</strong> Time-varying E produces B (displacement current)</li>
+                </ul>
+            </div>
+            
+            <div class="note">
+                <h3>Problem-Solving Strategies</h3>
+                <ul>
+                    <li>Use <strong>Gauss's Law</strong> for symmetric charge distributions</li>
+                    <li>Use <strong>Ampère's Law</strong> for symmetric current distributions</li>
+                    <li>Apply <strong>boundary conditions</strong> at interfaces</li>
+                    <li>Use <strong>potential methods</strong> when dealing with conservative fields</li>
+                    <li>Apply <strong>superposition</strong> for complex configurations</li>
+                    <li>Check <strong>units and dimensions</strong> throughout calculations</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // Smooth scroll behavior for nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top functionality
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Optional: Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                scrollToTop();
+            }
+        });
+    </script>
+</body>
+</html>
